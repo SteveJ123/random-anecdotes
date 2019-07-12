@@ -22,22 +22,17 @@ function App() {
     const [rquote, setRquote] = useState(uprandomQuotes[0]);
   
   const nextQuote = () =>{
-    const randomValue = Math.floor(Math.random()*5);
-    console.log("randomValue", randomValue);    
+    const randomValue = Math.floor(Math.random()*5);    
     setrandomclickvalue(randomValue);
     setRquote(uprandomQuotes[randomValue]);    
   }
 
   const vote = () => {
-        console.log("uprandomQuotes", uprandomQuotes);
-    let randomQuotes = uprandomQuotes;
+        let randomQuotes = uprandomQuotes;
     randomQuotes[randomclickvalue].vote = randomQuotes[randomclickvalue].vote + 1;
-     setuprandomQuotes(randomQuotes.map((element) => element));    
-    console.log("randomQuotes", randomQuotes);    
-    console.log("uprandomQuotes", uprandomQuotes);
+     setuprandomQuotes(randomQuotes.map((element) => element));        
     setRquote(uprandomQuotes[randomclickvalue]);     
   }
-
   
   return (
     <div className="App">
